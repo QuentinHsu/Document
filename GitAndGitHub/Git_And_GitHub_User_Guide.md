@@ -38,29 +38,31 @@
 
 有时候它还会“主动”告诉你一些建议：你或许需要执行的操作。所以出了问题不必太慌张。
 
-## 假如 “本地仓库对远程仓库上传/下载速度慢”
+##  “本地仓库对远程仓库上传/下载速度慢”
 
-### 且恰好你有可用代理
+### 恰好你有可用代理
 
-Windows 用户：
+- 且无 “可挂代理的路由器设备” ，可通过以下方式
+    Windows 用户：
 
->1. 打开这个文件夹：`C:\Users\你的电脑用户名\.ssh`
->2. 右键新建一个记事本。注意，在创建的时候，删除`.txt`的后缀名（所以我们不是在创建一个 txt 文件！），文件名叫 `config` 。
->3. 然后在其中写入如下信息
->
->    `ProxyCommand "C:\Program Files\Git\mingw64\bin\connect.exe" -S 127.0.0.1:1080 %h %p`
->
->       这里 Git 的安装路径和后面的代理方式，自己看着填（个人建议，默认路径安装），不要试着用相对路径，保证要吃亏。因为 Program Files 文件夹中间带一个空格，所以这里需要把整个路径给引号引起来。  后面的代理的话，-S 指是 socks 代理，默认是 socks5，后面的 %h %p 意思是 Host 和 Port，必须得写上，我也不知道为什么要这么设计。如果要使用 HTTP 代理，就写 -H，更多代理类型（比如 socks4）请参[gotoh / connect / wiki / Home — Bitbucket](https://bitbucket.org/gotoh/connect/wiki/Home#!more-detail)。(该方法来源于知乎)
->
-> 在 Hyper for Windows 下走不了代理，push 会报错。（光好看不顶用！弃！
+    >1. 打开这个文件夹：`C:\Users\你的电脑用户名\.ssh`
+    >2. 右键新建一个记事本。注意，在创建的时候，删除`.txt`的后缀名（所以我们不是在创建一个 txt 文件！），文件名叫 `config` 。
+    >3. 然后在其中写入如下信息
+    >
+    >    `ProxyCommand "C:\Program Files\Git\mingw64\bin\connect.exe" -S 127.0.0.1:1080 %h %p`
+    >
+    >       这里 Git 的安装路径和后面的代理方式，自己看着填（个人建议，默认路径安装），不要试着用相对路径，保证要吃亏。因为 Program Files 文件夹中间带一个空格，所以这里需要把整个路径给引号引起来。  后面的代理的话，-S 指是 socks 代理，默认是 socks5，后面的 %h %p 意思是 Host 和 Port，必须得写上，我也不知道为什么要这么设计。如果要使用 HTTP 代理，就写 -H，更多代理类型（比如 socks4）请参[gotoh / connect / wiki / Home — Bitbucket](https://bitbucket.org/gotoh/connect/wiki/Home#!more-detail)。(该方法来源于知乎)
+    >
+    > 在 Hyper for Windows 下走不了代理，push 会报错。（光好看不顶用！弃！
 
-Linux 平台：
+    Linux 平台：
 
-> ......
+    > ......
 
-macOS 平台：
+    macOS 平台：
 
-> ......
+    > ......
+- 若是有可挂代理的路由设备，（**强烈**）建议直接使用路由挂代理！用了都说好！~
 
 **值得注意的是！使用 Git Clone 命令行的方式下载仓库和 GitHub 的网页打包方式下载仓库，均不支持断点续传。**
 所以，在下载仓库的时候，假如你的代理不稳（时不时断流）、或者有多个代理想切换一下使用、以及暂停下下载器等会儿再下载，那恭喜你：你得重新下载。哪怕是你不删除上次的未完成文件夹，想接着 Clone ，这也是不行的，程序只会是从零开始，重新下载。
