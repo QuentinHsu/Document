@@ -99,6 +99,7 @@ npm 和 yarn 都是“包管理工具”。个人推荐在开发中使用 yarn �
 
   ```vue
   vue create <projectName>
+  cd <projectName>
   ```
 
 ### 引入 Element UI
@@ -106,15 +107,33 @@ npm 和 yarn 都是“包管理工具”。个人推荐在开发中使用 yarn �
   假如你要在使用 VueCli 3.x 构建的项目中，使用 Element UI ，Element UI 官方提供了一个专门插件：[vue-cli-plugin-element](https://github.com/ElementUI/vue-cli-plugin-element)。详情看其 README 文档。
 
   ```vue
-  vue create <projectName>
-  cd <projectName>
   vue add element
   ```
+
+  执行该命令即可，相应的引入会自动为你写入相应的文件中
 
 ### 去除浏览器默认样式
 
 [normalize.css](https://github.com/necolas/normalize.css)
 
-这个可以引入 CSS 文件进行使用，也可以通过 npm 进行安装使用。
+这个可以引入直接 CSS 文件进行使用，也可以通过 npm / yarn 进行安装使用。
+
+```npm
+npm install --save normalize.css
+```
+
+```yarn
+yarn add normailize.css
+```
+
+我是通过 yarn 安装的。
+
+并要在 `src/main.js` 中引入 normalize.css 。
+
+```
+import 'normalize.css/normalize.css'
+```
+
+不然不会生效。
 
 
