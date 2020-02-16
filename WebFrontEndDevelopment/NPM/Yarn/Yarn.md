@@ -4,6 +4,12 @@
 
 ## 安装
 
+因为经常使用到，所以全局安装
+
+```
+npm install global yarn
+```
+
 ## 更新
 
 请这样，对 yarn 进行更新：
@@ -119,3 +125,18 @@
     - .yarn-integrity
   - yarn.lock
   ```
+
+## 安装依赖
+
+拉去别人的项目时，
+
+```
+yarn install
+```
+
+强制重新按照 `yarn.lock` 目录拉取依赖
+
+```
+yarn install --force
+```
+
