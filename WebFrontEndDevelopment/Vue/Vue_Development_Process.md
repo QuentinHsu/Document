@@ -136,4 +136,15 @@ import 'normalize.css/normalize.css'
 
 不然不会生效。
 
+> ### yarn 安装 normalize.css 失败
+> `2020/02/20`
+>
+> 进行一测试项目的搭建，发现 normalize.css 无法使用 yarn 进行安装，包仓库显示无法找到该包。遂使用 npm 进行安装，报错（着实嫌弃 npm ）。无奈只好添加 normalize.css 独立文件进项目里。并
+>
+> ```
+> # src/main.js
+> import '<normalize.css存放路径>'
+> ```
+> 即可生效!
+
 
