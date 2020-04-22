@@ -10,7 +10,7 @@
 
 因为 npm 有时候很（出）玄（问）学（题）。
 
-## 安装 依赖
+## 安装 依赖/模块
 
 - 直接安装（默认安装包仓库最新版本）
 
@@ -36,6 +36,11 @@
 
     ```npm
     npm install moduleName --save
+    ```
+- 强制 **重新安装** 模块: ~ + `--force`
+
+    ```npm
+    npm install --force
     ```
 
 ### npm install 相关命令详解
