@@ -43,4 +43,5 @@
 ### 视觉优化
 - [Browser](VisualOptimization/Browser.md)
 
-AuxiliaryPlugIn
+### 辅助插件
+- [VS Code 插件](AuxiliaryPlugIn/VSCodePlugIn.md)
