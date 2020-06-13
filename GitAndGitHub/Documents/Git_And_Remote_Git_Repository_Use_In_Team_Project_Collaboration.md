@@ -63,3 +63,27 @@ git clone 默认只会 clone master 分支上的内容
 git clone -b <分支名> SSH/HTTPS
 ```
 
+### 3. 强制 push 覆盖远程仓库内容
+
+因为在本地的提交，不小心误删除了多个提交记录（在误删除前就已同步至远程）。
+
+在本地修正了错误操作后，直接 push，是不可以的。因为远程和本地的提交记录有差异（本地缺失远程版本的某一个提交），继而会报如下错误。
+
+```
+> git push
+To github.com:QuentinHsu/******.git
+ ! [rejected]        master -> master (non-fast-forward)
+error: failed to push some refs to 'git@github.com:QuentinHsu/******.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+```
+
+当确定是以本地仓库现有提交版本为最新的话，那我们就 **强制 push 覆盖远程仓库**
+
+```
+git push origin master --force
+```
+
+可能需要注意实际的分支情况

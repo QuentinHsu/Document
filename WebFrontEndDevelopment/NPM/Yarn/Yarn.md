@@ -76,7 +76,7 @@ npm install global yarn
   1.21.1
   ```
 
-  根据终端的提示，此时 yarn global upgrade yarn 命令它解析到的 yarn 最新版本号就是 v1.19.2，即我本地安装的版本。
+  根据终端的提示，此时 `yarn global upgrade yarn` 命令它解析到的 yarn 最新版本号就是 v1.19.2，即我本地安装的版本。
 
   但在我使用 `yarn install --force` 重新拉取依赖时，终端中却提醒我该更新 yarn 的版本了:
 
@@ -128,15 +128,16 @@ npm install global yarn
 
 ## 安装依赖
 
-拉去别人的项目时，
+拉取一个“新”的项目，准备本地运行/开发：
 
 ```
 yarn install
 ```
 
-强制重新按照 `yarn.lock` 目录拉取依赖
+强制重新按照 `yarn.lock` 中内容拉取依赖：
 
 ```
 yarn install --force
 ```
 
+不要去手动删除 node_modules 文件夹再 `yarn install` ，耗时又费力。
