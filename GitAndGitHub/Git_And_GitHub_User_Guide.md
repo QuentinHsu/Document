@@ -28,7 +28,7 @@
 
 ## 特定情况的处理
 
-    [Git 撤销](Documents/GitRevocation.md)
+- [ ] Writing [Git 撤销](Documents/GitRevocation.md)
 
 
 ## 遇到涉及 Git 操作的问题，且网络上无参考的案例
