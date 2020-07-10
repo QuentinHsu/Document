@@ -17,6 +17,7 @@ Linux：
 ```bash
 mkdir fileName  (创建文件夹‘fileName’)
 ```
+其实这个命令，也可以在 Windows 上使用。
 
 > **温馨提示** 🌈
 >
@@ -192,7 +193,7 @@ git add
 git commit
 ```
 
-## 当你fork了一个项目仓库后
+## 当你 fork 了一个项目仓库后
 
 假如你想为这个项目贡献代码，且还有其他人在同时为这仓库贡献代码时，你或许（其实是一定）需要做下面的事情，为后续的 Coding 提供一些方便。
 
@@ -250,3 +251,145 @@ git remote rm 远程名称
 ```bash
 git config --global http.sslVerify false
 ```
+
+## 分支 branch
+
+### 查看分支
+
+- 查看 **本地** 分支
+
+  ```bash
+  git branch -a
+  ```
+
+- 查看 **远程** 分支
+
+  ```bash
+  git branch -a
+  ```
+
+- 查看所有本地分支及当前的所有远程本地关联情况
+
+  ```bash
+  git branch -a
+  ```
+
+
+### 新建本地分支
+
+- 只是单纯的新建，并不切换到新建的本地分支上
+
+    ```bash
+    git branch <branch-name>
+    ```
+
+    - 创建新的本地分支并立刻切换过去
+
+        ```bash
+        git checkout -b <branch-name>
+        ```
+
+### 删除分支
+
+- 在本地
+  - 删除已参与合并的本地某分支
+
+    ```bash
+    git branch -d <branch-name>
+    ```
+
+    `-d`：**只能删除已参与了合并的分支**，对未有合并的分支无法删除。
+
+  - 强制删除本地某分支
+
+    ```bash
+    git branch -D <branch-name>
+    ```
+
+    `-D`：强制删除！
+
+- 在远程
+
+  - 可在 Web 上进行图形化操作。GitHub 上是在 *View all branches* 页面（链接大概就是：仓库地址+'branches'）
+
+    假如你是先在远程删除了分支，那么你需要以如下方式来同步到本地
+
+    - 我们先来查看下远程和本地分支情况：
+
+        ```bash
+        git remote show origin
+        ```
+
+        若有差异，会显示如下类似内容：
+
+        ```bash
+        ***************
+        Remote branches:
+        Vue2.x                    tracked
+        master                    tracked
+        refs/remotes/origin/test  stale (use 'git remote prune' to remove) #1
+        refs/remotes/origin/test1 stale (use 'git remote prune' to remove) #2
+        ***************
+        ```
+
+        #1 和 #2 的分支，便是在远程已删除的分支。
+
+    - 假如你想同步远程分支的变化到本地：
+      - 先删除本地分支的无效关联
+
+        ```bash
+        git remote prune origin
+        ```
+
+        注意：这个命令 **只是移除远程已删除分支跟本地对应分支之间的关联/链接。**
+
+        在执行后，被移除与远程对应分支关联/链接的本地分支并没有被删除。可以通过 `git branch` / `git branch -a` 进行查询验证。
+
+        在这里，`git pull`，并不能用来同步分支变更）
+
+      - 再 **手动** 强制删除本地分支
+
+        ```bash
+        git branch -d <branch-name>
+        ```
+
+        是的！你没看错！目前只找到手动的方法去一一删除。因为虽然有找到一个通过过滤来删除无用分支的方法，但命令有点复杂不方便记忆和理解，索性还是手动一一删除的好。
+
+  - 也可在本地删除远程的分支：
+
+        ```bash
+        git push origin :heads/<branch-name>
+        ```
+
+        该方式还删除了该分支远程和本地的关联，但本地的对应分支还是在的。还是得手动删除对应本地分支。
+
+### 合并分支
+
+```bash
+git merge <branch-name>
+```
+
+**注意**：这是将 `<branch-name>` 与当前分支（比如当前在 master 上）合并。
+
+### 将本地分支同步到远程
+
+
+```bash
+git push origin <branch-name>:<branch-name>
+```
+
+上传本地的 test 分支作为远程的 test 分支
+
+```bash
+git push origin test:test
+```
+
+以上才是同步本地分支到远程的正确姿势！
+
+**切记不要像下面这般**，虽然也可以同步，但会触发远程仓库的自动预合并到 master！
+
+```bash
+git push origin test
+```
+
+###
