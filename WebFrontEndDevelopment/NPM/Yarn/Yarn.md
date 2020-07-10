@@ -126,18 +126,33 @@ npm install global yarn
   - yarn.lock
   ```
 
-## 安装依赖
+## 根据 package.json 安装项目所需依赖
 
-拉取一个“新”的项目，准备本地运行/开发：
+- 拉取一个“新”的项目，准备本地运行/开发：
 
-```
-yarn install
-```
+  ```yarn
+  yarn install
+  ```
 
-强制重新按照 `yarn.lock` 中内容拉取依赖：
+- 强制重新按照 `package.json` 中内容拉取依赖：
 
-```
-yarn install --force
-```
+  ```yarn
+  yarn install --force
+  ```
 
-不要去手动删除 node_modules 文件夹再 `yarn install` ，耗时又费力。
+  不要去手动删除 node_modules 文件夹再 `yarn install` ，耗时又费力。
+
+## 添加新的依赖
+
+- 添加代码运行时所需依赖。**生产和开发都需要的**。
+
+  ```yarn
+  yarn add <package-name>
+  ```
+
+- 添加 **仅开发** 时所需依赖
+
+  ```yarn
+  yarn add <package-name> [-D/--dev]
+  ```
+

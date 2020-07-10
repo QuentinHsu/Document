@@ -86,4 +86,4 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 git push origin master --force
 ```
 
-可能需要注意实际的分支情况
+可能需要注意实际的分支情况。因为在这儿，我只有 master 一个分支。

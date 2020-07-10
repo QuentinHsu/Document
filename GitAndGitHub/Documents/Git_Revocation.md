@@ -24,7 +24,7 @@ git checkout -- .
 撤销 **指定文件** 的更改
 
 ```bash
-git checkout -- <fileName>
+git checkout -- <file path>
 ```
 ## 2. 已暂存后，撤销暂存区的更改：`reset`
 
@@ -43,7 +43,7 @@ git reset .
 撤销 **当前 指定 已暂存 文件的更改**
 
 ```bash
-git reset <fileName>
+git reset <file path>
 ```
 
 ## 撤销 **未提交的所有更改**
@@ -119,7 +119,7 @@ git log
 2. **追加** 进当前最新的提交记录中
 
     ```bash
-    git add <file>
+    git add <file path>
     git commit --amend
     ```
 
