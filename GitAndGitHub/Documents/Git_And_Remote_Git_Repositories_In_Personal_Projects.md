@@ -10,14 +10,19 @@
 
 若是你的项目还未开始/正要开始，那么我们就新建一个文件夹，作为项目的本地存放专属地址，也是我们的使用 Git 中所称的“仓库”所待的地方。Origin！
 
-Windows用户：这个就不用我再描述如何创建新文件夹吧
+Windows用户：
+    - 图形化创建，这个就不用我再描述如何创建新文件夹吧
+    - 命令行
+
+      ```bash
+      mkdir fileName
+      ```
 
 Linux：
 
 ```bash
-mkdir fileName  (创建文件夹‘fileName’)
+mkdir fileName
 ```
-其实这个命令，也可以在 Windows 上使用。
 
 > **温馨提示** 🌈
 >
@@ -47,11 +52,11 @@ git status
 
 ```bash
 git add
-git add . [1]
+git add . #1
 git add fileName
 ```
 
-[1]处的 `.` 是 通配符 ，指当前路径下的所有文件（不包括已被删除的文件哟）。
+#1 处的 `.` 是 通配符 ，指当前路径下的所有文件（不包括已被删除的文件哟）。
 
 ## 提交
 
@@ -76,14 +81,15 @@ Windows下，你在写 "提交信息" 内容时，且想使用英文：
 
 ### 修改上一次提交信息
 
-```git
+```bash
 git commit --amend
 ```
+
 执行后，将会弹出修改界面。修改完成后关闭该页面，即修改成功，并重新生成新的commit（或者说是覆盖掉“无用”的 commit 信息）。
 
-## 本地Git仓库和远程仓库的关联
+## 本地 Git 仓库和远程仓库的关联
 
-**注意**:这儿的指的“远程仓库”，是指的你自己的 GitHub 账户下的仓库（自己创建的和 fork 的仓库），不是别人的仓库！
+**注意**：这儿的指的“远程仓库”，是指的你自己的 GitHub 账户下的仓库（自己创建的和 fork 的仓库），不是别人的仓库！
 
 我们来把本地 Git 仓库和远程 Git 仓库（我在这里是用 GitHub ）它俩之间建立起一个联系：
 
@@ -125,12 +131,12 @@ git commit --amend
     3. 提交本地已有的代码。
 
         假如你直接
-        ```git
+        ```bash
         git push
         ```
         会得到如下提示
 
-        ```git
+        ```bash
         λ git push
         fatal: The current branch master has no upstream branch.
         To push the current branch and set the remote as upstream, use
@@ -140,7 +146,7 @@ git commit --amend
 
         根据提示，你需要执行
 
-        ```git
+        ```bash
         git push --set-upstream origin master
         ```
         照做就好。
@@ -279,15 +285,15 @@ git config --global http.sslVerify false
 
 - 只是单纯的新建，并不切换到新建的本地分支上
 
+  ```bash
+  git branch <branch-name>
+  ```
+
+  - 创建新的本地分支并立刻切换过去
+
     ```bash
-    git branch <branch-name>
+    git checkout -b <branch-name>
     ```
-
-    - 创建新的本地分支并立刻切换过去
-
-        ```bash
-        git checkout -b <branch-name>
-        ```
 
 ### 删除分支
 
@@ -357,11 +363,11 @@ git config --global http.sslVerify false
 
   - 也可在本地删除远程的分支：
 
-        ```bash
-        git push origin :heads/<branch-name>
-        ```
+    ```bash
+    git push origin :heads/<branch-name>
+    ```
 
-        该方式还删除了该分支远程和本地的关联，但本地的对应分支还是在的。还是得手动删除对应本地分支。
+    该方式还删除了该分支远程和本地的关联，但本地的对应分支还是在的。还是得手动删除对应本地分支。
 
 ### 合并分支
 

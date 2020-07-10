@@ -59,7 +59,7 @@ git clone 默认只会 clone master 分支上的内容
 
 如需 clone 指定某分支：
 
-```git
+```bash
 git clone -b <分支名> SSH/HTTPS
 ```
 
