@@ -388,6 +388,8 @@ git push origin <branch-name>:<branch-name>
 
 ```bash
 git push origin test:test
+# or
+git push origin test
 ```
 
 以上才是同步本地分支到远程的正确姿势！
@@ -395,7 +397,7 @@ git push origin test:test
 **切记不要像下面这般**，虽然也可以同步，但会触发远程仓库的自动预合并到 master！
 
 ```bash
-git push origin test
+git push
 ```
 
 ###
