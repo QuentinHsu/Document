@@ -36,6 +36,8 @@
 
 - [Universal Router](GuideToTheCreationAndUseOfTools/Universal_Router.md)
 
+- [OpenWRT](GuideToTheCreationAndUseOfTools/OpenWRT.md)
+
 ### 命名规范/约定准则
 
 - [命名规范](Comprehensive/Naming_Conventions.md)
