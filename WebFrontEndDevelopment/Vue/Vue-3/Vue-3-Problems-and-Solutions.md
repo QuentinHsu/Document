@@ -44,20 +44,23 @@ The template root requires exactly one element.eslint-plugin-vue
 
 ![修改 Validation: Template](../../../images/Vue-3-Problems-and-Solutions202008081537.png)
 
-去掉该处的勾选即可。编辑器不再会报错。
+去掉该处的勾选即可，编辑器不再会报错。
 
-但插件在 最近两次更新（0.26.0、0.26.1）中就修复了该问题，为不同的 Vue 版本提供不同的规则集，或者官方默认直接关掉 Vetur template validation：
+但我后面又再反复尝试验证 “Vetur template validation 的是否关闭，带来的影响”，发现打开，也不再报错了……
+
+这就让我纳闷了，难道刚刚插件在后台更新了？修复了问题？于是我跑去看 Vetur 的更新日志
+
+原来插件在 最近两次更新（0.26.0、0.26.1）中就修复了该问题，为不同的 Vue 版本提供不同的规则集，或者官方默认直接关掉了 Vetur template validation，直接使用 ESLint 的规则（前提是已安装了 ESLint ）：
 
 > Vetur bundles eslint-plugin-vue for template error checking. By default, Vetur loads the vue/essential ruleset for Vue 2 projects and vue3-essential ruleset for Vue 3 projects.
 >
 > If you want to config ESLint rules, do the following:
-》
+>
 > Turn off Vetur's template validation with vetur.validation.template: false
 > Make sure you have the ESLint plugin. The errors will come from ESLint plugin, not Vetur.
 > yarn add -D eslint eslint-plugin-vue in your workspace root
-
-原来现在 『Vetur 捆绑了 eslint-plugin-vue 用于模板错误检查。默认情况下，Vetur 为 Vue 2 项目加载 vue/essential 规则集，为 Vue 3 项目加载 vue3-essential 规则集。……』
+> ……
 
 搞半天 Vetur 在新版本中早就解决了这问题！
 
-可能是最近我的 VS Code 没咋打开， Vetur 能自动“即时”更新，以至于我今天机缘巧合地稍稍深度了解下一些新的东西。说起来也不算白忙活一场。
+可能是最近我的 VS Code 没咋打开， Vetur 没能自动“即时”更新，以至于我今天机缘巧合地稍稍深度了解下一些新的东西。说起来也不算白忙活一场。
