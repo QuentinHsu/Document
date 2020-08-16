@@ -1,6 +1,20 @@
+<!-- vscode-markdown-toc -->
+* 1. [安装 依赖/模块](#)
+	* 1.1. [npm install 相关命令详解](#npminstall)
+* 2. [npm、yarn 查看镜像源地址](#npmyarn)
+	* 2.1. [部分镜像源地址：](#-1)
+	* 2.2. [使用 cgr 管理/查看 npm 和 yarn 的镜像源地址](#cgrnpmyarn)
+
+<!-- vscode-markdown-toc-config
+	numbering=true
+	autoSave=true
+	/vscode-markdown-toc-config -->
+<!-- /vscode-markdown-toc -->
 # NPM
 
 > Node.js 附带的包管理器。
+
+
 
 [NPM 官方中文文档](https://www.npmjs.cn/)
 
@@ -10,7 +24,7 @@
 
 因为 npm 有时候很（出）玄（问）学（题）。
 
-## 安装 依赖/模块
+##  1. <a name=''></a>安装 依赖/模块
 
 - 直接安装（默认安装包仓库最新版本）
 
@@ -43,7 +57,7 @@
     npm install --force
     ```
 
-### npm install 相关命令详解
+###  1.1. <a name='npminstall'></a>npm install 相关命令详解
 
 - npm install X:
 
@@ -83,7 +97,7 @@
 
 > -–save-dev 可以简写为 -D
 
-## npm、yarn 查看镜像源地址
+##  2. <a name='npmyarn'></a>npm、yarn 查看镜像源地址
 
 ```sh
 npm config get registry  // 查看npm当前镜像源
@@ -95,7 +109,7 @@ yarn config get registry  // 查看yarn当前镜像源
 yarn config set registry https://registry.npm.taobao.org/  // 设置yarn镜像源为淘宝镜像
 ```
 
-### 部分镜像源地址：
+###  2.1. <a name='-1'></a>部分镜像源地址：
 
 - npm：https://registry.npmjs.org/
 
@@ -113,7 +127,7 @@ yarn config set registry https://registry.npm.taobao.org/  // 设置yarn镜像�
 
 - deunpm：http://registry.enpmjs.org/
 
-### 使用 cgr 管理/查看 npm 和 yarn 的镜像源地址
+###  2.2. <a name='cgrnpmyarn'></a>使用 cgr 管理/查看 npm 和 yarn 的镜像源地址
 
 - 安装
 
@@ -136,3 +150,13 @@ yarn config set registry https://registry.npm.taobao.org/  // 设置yarn镜像�
       taobao - https://registry.npm.taobao.org/
     Y yarn --- https://registry.yarnpkg.com/
     ```
+
+## 查询当前项目特定依赖的版本号
+
+```npm
+npm ls node_modules_name
+```
+
+- 若存在该依赖，则返回：依赖名+版本号。
+
+- 若不存在该依赖，则返回 empty。以此可检验是否安装了某依赖。
