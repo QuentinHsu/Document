@@ -6,7 +6,7 @@
 - 3.0 及以上（包名：@vue/cli）版本
 - 2.x （旧，包名：vue-cli）版本（止步于 [v2.9.6](https://www.npmjs.com/package/vue-cli)）
 
-使用
+## 安装
 
 ```vue-cli
 npm install -g @vue/cli
@@ -37,6 +37,16 @@ npm install -g @vue/cli
 ```
 
 **-g**：全局安装。
+
+## 查询 VueCli 版本
+
+```VueCli
+vue --version
+
+vue -V
+```
+
+对！你没看错，命令就是 `vue`，而不是你之前所猜测的 `vuecli`。
 
 ### 创建项目
 
@@ -70,3 +80,4 @@ npm install -g @vue/cli
     4. **browserify** 一个简单的 Browserify + vueify 设置，用于快速原型设计。
     5. **pwa** 基于 vue webpack 模板的 pwa 模板
     6. **simple** 最简单的 vue 单页面项目
+

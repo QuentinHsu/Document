@@ -265,13 +265,13 @@ git config --global http.sslVerify false
 - 查看 **本地** 分支
 
   ```bash
-  git branch -a
+  git branch
   ```
 
 - 查看 **远程** 分支
 
   ```bash
-  git branch -a
+  git branch -r
   ```
 
 - 查看所有本地分支及当前的所有远程本地关联情况
